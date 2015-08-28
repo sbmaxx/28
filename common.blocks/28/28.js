@@ -30,6 +30,7 @@ provide(BEMDOM.decl(this.name, {
                     if(dx >= -1 && dx <= 1 && dy >= -1 && dy <= 1) {
                         var x = girlX + dx,
                             y = girlY + dy;
+                        if(x < 0 || x > 9 || y < 0 || y > 19) throw Error('You can not move outside scene.');
                         if(walkways[y][x]) {
                             scene.move(girl, x, y);
                             girlX = x;
@@ -47,8 +48,9 @@ provide(BEMDOM.decl(this.name, {
                     console.log('!! open', arguments);
                     if(dx >= -1 && dx <= 1 && dy >= -1 && dy <= 1) {
                         var x = girlX + dx,
-                            y = girlY + dy,
-                            door = doors[y][x];
+                            y = girlY + dy;
+                        if(x < 0 || x > 9 || y < 0 || y > 19) throw Error('You can not open outside scene.');
+                        var door = doors[y][x];
                         if(door) {
                             BEMDOM.destruct(door);
                             doors[y][x] = undefined;
