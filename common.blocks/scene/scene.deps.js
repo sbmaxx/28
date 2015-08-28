@@ -1,6 +1,6 @@
 ([
 {
-    mustDeps : { block : 'i-bem' }
+    mustDeps : 'i-bem'
 },
 {
     tech : 'js',

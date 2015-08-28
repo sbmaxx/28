@@ -14,6 +14,12 @@ module.exports = {
                 'F...F.P..PP.F..tPPFP',
                 'tkF.F.FP..F.FP..trtr',
                 'ttF...FPF...FPF..D.W'
+            ],
+            secrets : [
+                'QL0AFWMIX8NRZTKeof9cXsvbvu8=',
+                '123',
+                '456',
+                '789'
             ]
         }
     },

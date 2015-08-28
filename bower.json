@@ -10,6 +10,7 @@
   ],
   "dependencies": {
     "bem-components": "2.3.0",
-    "ace-min-noconflict": "https://github.com/ajaxorg/ace-builds.git"
+    "ace-min-noconflict": "https://github.com/ajaxorg/ace-builds.git",
+    "jshashes" : "1.0.5"
   }
 }

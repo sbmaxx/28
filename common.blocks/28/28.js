@@ -1,4 +1,4 @@
-modules.define( '28', ['i-bem__dom'], function(provide, BEMDOM) {
+modules.define( '28', ['i-bem__dom', 'lock'], function(provide, BEMDOM, lock) {
 
 var graphics = {
     P : '🌳',
@@ -51,7 +51,7 @@ provide(BEMDOM.decl(this.name, {
                             y = girlY + dy;
                         if(x < 0 || x > 9 || y < 0 || y > 19) throw Error('You can not open outside scene.');
                         var door = doors[y][x];
-                        if(door) {
+                        if(door && (door = door(key))) {
                             BEMDOM.destruct(door);
                             doors[y][x] = undefined;
                             walkways[y][x] = true;
@@ -71,6 +71,7 @@ provide(BEMDOM.decl(this.name, {
                                 'open',
                                 editor.getValue())(move, open);
                         }),
+                    secrets = this.params.secrets,
                     girl,
                     girlX,
                     girlY,
@@ -87,7 +88,7 @@ provide(BEMDOM.decl(this.name, {
                             girlX = i;
                             girlY = j;
                         } else if(o === 'D') {
-                            doorsRow[i] = obj;
+                            doorsRow[i] = lock(obj, secrets.shift());
                         } else if(o === '.') {
                             walkwaysRow[i] = true;
                         }
