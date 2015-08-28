@@ -40,6 +40,13 @@ module.exports = {
             mods : { theme : 'solarized-light', mode : 'javascript' },
             content : 'move(1, 0);\nopen(1, 0, 123);'
         },
-        right : { block : 'puzzle', content : 'puzzle' }
+        right : {
+            block : 'puzzle',
+            parts : [
+                { val : 1,  html : 'a', css : { background : 'red' } },
+                { val : 2,  html : 'b', css : { background : 'green' } },
+                { val : 3,  html : 'c', css : { background : 'blue' } }
+            ]
+        }
     }
 };
