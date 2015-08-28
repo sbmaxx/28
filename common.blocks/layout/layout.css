@@ -1,0 +1,22 @@
+.layout {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+.layout__header,
+.layout__row,
+.layout__col {
+    display: flex;
+}
+
+.layout__header {
+    justify-content: center;
+    align-items: center;
+}
+
+.layout__row,
+.layout__col {
+    flex: 1 auto;
+}
