@@ -10,7 +10,7 @@ provide(BEMDOM.decl(this.name, {
     onSetMod : {
         'js' : {
             'inited' : function() {
-                var editor = ace.edit(this.domElem[0]),
+                var editor = this.editor = ace.edit(this.domElem[0]),
                     theme = this.getMod('theme').replace('-', '_'),
                     mode = this.getMod('mode');
 

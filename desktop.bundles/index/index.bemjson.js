@@ -1,31 +1,19 @@
-var P = '🌳',
-    F = '🌲',
-    r = '🌹',
-    t = '🌵',
-    V = '🌺',
-    k = '🌿',
-    s = '🌻',
-    g = '💃🏻',
-    D = '🚪',
-    W = '🎁',
-    o = ' ';
-
 module.exports = {
     block : 'page',
     mix : {
         block : '28',
         js: {
             scene : [
-                'goDoFoookoooPoooFooo',
-                'FkFoooFoooFoookoooFo',
+                'g.D.F...k...P...F...',
+                'FkF...F...F...k...F.',
                 'PFkPFkFkFPkPFPFPPPFD',
-                'ooosooosooosooosoooo',
-                'DVooosooosooosoooskV',
-                'okFPFPFPFPFPFtFPPPFP',
-                'ooPFPoooFFFoootPFPPF',
-                'FoooFoPooPPoFootPPFP',
-                'tkFoFoFPooFoFPootrtr',
-                'ttFoooFPFoooFPFooDoW'
+                '...s...s...s...s....',
+                'DV...s...s...s...skV',
+                '.kFPFPFPFPFPFtFPPPFP',
+                '..PFP...FFF...tPFPPF',
+                'F...F.P..PP.F..tPPFP',
+                'tkF.F.FP..F.FP..trtr',
+                'ttF...FPF...FPF..D.W'
             ]
         }
     },
@@ -44,7 +32,7 @@ module.exports = {
         left : {
             block : 'ace',
             mods : { theme : 'solarized-light', mode : 'javascript' },
-            content : 'var a = 1;'
+            content : 'move(1, 0);\nopen(1, 0, 123);'
         },
         right : { block : 'puzzle', content : 'puzzle' }
     }

@@ -2,7 +2,7 @@ modules.define( 'scene', ['i-bem__dom', 'BEMHTML'], function(provide, BEMDOM, BE
 
 provide(BEMDOM.decl(this.name, {
     add : function(obj, x, y) {
-        return BEMDOM.append(
+        if(obj) return BEMDOM.append(
             this.domElem,
             BEMHTML.apply({
                 block : 'scene',
@@ -12,6 +12,10 @@ provide(BEMDOM.decl(this.name, {
                 content : obj
             })
         );
+    },
+
+    move : function(obj, x, y) {
+        obj.css({ top : y * 30, left : x * 30 });
     }
 }));
 

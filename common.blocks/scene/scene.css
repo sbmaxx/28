@@ -1,4 +1,6 @@
 .scene {
+    cursor: pointer;
+    user-select: none;
     display: flex;
     width: 600px;
     height: 300px;
