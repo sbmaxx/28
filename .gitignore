@@ -1,0 +1,26 @@
+libs/
+node_modules/
+.DS_Store
+.idea
+.project
+.svn
+npm-debug.log
+
+# bem
+.bem
+.enb
+*blocks/*/*
+!common.blocks/puzzle/*.jpg
+*bundles*/*/*.*
+!*bundles*/*/*.min.*
+!*bundles*/*/*.html
+
+!*bundles*/.bem/*
+
+.bowerrc
+.editorconfig
+.travis.yml
+README.md
+README.ru.md
+bower.json
+package.json
