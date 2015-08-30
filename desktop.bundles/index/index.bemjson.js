@@ -64,7 +64,7 @@ module.exports = {
             {
                 block : 'puzzle',
                 js : { secret : 'bsaK1JewL8AWY2TdS7gATVCDXPY=' },
-                hint : 'http://j.mp/to-&lt;prev-key&gt;',
+                hint : 'http://j.mp/to&lt;prev-key&gt;',
                 parts : [
                     { html : 'a ' },
                     { html : 'b ' },
@@ -77,7 +77,7 @@ module.exports = {
             {
                 block : 'puzzle',
                 js : { secret : 'nTC0lROlq1H7jcthZ7xBEbadqf4=' },
-                hint : 'http://j.mp/to-&lt;prev-key&gt;',
+                hint : 'http://j.mp/to&lt;prev-key&gt;',
                 parts : [
                     { css : { 'background-color' : 'green' } },
                     { css : { 'background-color' : 'white' } },
