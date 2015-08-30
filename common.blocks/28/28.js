@@ -19,7 +19,7 @@ provide(BEMDOM.decl(this.name, {
         'js' : {
             'inited' : function() {
                 var editor = this.findBlockInside('ace').editor;
-                editor.setValue(localStorage['28.code'] || '', 1);
+                editor.setValue(localStorage['28.code'] || editor.getValue(), 1);
                 editor.focus();
                 editor.getSession().on('change', function() {
                     localStorage['28.code'] = editor.getValue();
