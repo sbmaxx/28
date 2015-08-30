@@ -32,7 +32,11 @@ module.exports = {
         left : {
             block : 'ace',
             mods : { theme : 'solarized-light', mode : 'javascript' },
-            content : 'move(1, 0);\nopen(1, 0, 123);'
+            content : [
+                '// may returns false in case of impossible actions',
+                'move(1, 0);',
+                'open(1, 0, \'key from puzzle at right side\');'
+            ].join('\n')
         },
         right : [
             {
