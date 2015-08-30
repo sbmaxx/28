@@ -1,4 +1,4 @@
-modules.define( '28', ['i-bem__dom', 'lock'], function(provide, BEMDOM, lock) {
+modules.define( '28', ['i-bem__dom'], function(provide, BEMDOM) {
 
 var graphics = {
     P : '🌳',
@@ -30,7 +30,7 @@ provide(BEMDOM.decl(this.name, {
                     if(dx >= -1 && dx <= 1 && dy >= -1 && dy <= 1) {
                         var x = girlX + dx,
                             y = girlY + dy;
-                        if(x < 0 || x > 9 || y < 0 || y > 19) throw Error('You can not move outside scene.');
+                        if(x < 0 || x > 19 || y < 0 || y > 9) return false;
                         if(walkways[y][x]) {
                             scene.move(girl, x, y);
                             girlX = x;
@@ -40,7 +40,7 @@ provide(BEMDOM.decl(this.name, {
                             return false;
                         }
                     } else {
-                        throw Error('You can only move by 1 cell.')
+                        return false;
                     }
                 }
 
@@ -49,7 +49,7 @@ provide(BEMDOM.decl(this.name, {
                     if(dx >= -1 && dx <= 1 && dy >= -1 && dy <= 1) {
                         var x = girlX + dx,
                             y = girlY + dy;
-                        if(x < 0 || x > 9 || y < 0 || y > 19) throw Error('You can not open outside scene.');
+                        if(x < 0 || x > 19 || y < 0 || y > 9) return false;
                         var door = doors[y][x];
                         if(door && (door = door(key))) {
                             BEMDOM.destruct(door);
@@ -60,7 +60,7 @@ provide(BEMDOM.decl(this.name, {
                             return false;
                         }
                     } else {
-                        throw Error('You can only open by 1 cell.')
+                        return false;
                     }
                 }
 
@@ -71,6 +71,7 @@ provide(BEMDOM.decl(this.name, {
                                 'open',
                                 editor.getValue())(move, open);
                         }),
+                    puzzles = this.findBlocksInside('puzzle'),
                     secrets = this.params.secrets,
                     girl,
                     girlX,
@@ -88,7 +89,15 @@ provide(BEMDOM.decl(this.name, {
                             girlX = i;
                             girlY = j;
                         } else if(o === 'D') {
-                            doorsRow[i] = lock(obj, secrets.shift());
+                            var puzzle = puzzles.shift();
+                            doorsRow[i] = puzzle.lock(
+                                obj,
+                                (function(curPuzzle, nextPuzzle) {
+                                    return function() {
+                                        curPuzzle.delMod('visible');
+                                        nextPuzzle && nextPuzzle.setMod('visible');
+                                    }
+                                })(puzzle, puzzles[0]));
                         } else if(o === '.') {
                             walkwaysRow[i] = true;
                         }

@@ -14,12 +14,6 @@ module.exports = {
                 'F...F.P..PP.F..tPPFP',
                 'tkF.F.FP..F.FP..trtr',
                 'ttF...FPF...FPF..D.W'
-            ],
-            secrets : [
-                'QL0AFWMIX8NRZTKeof9cXsvbvu8=',
-                '123',
-                '456',
-                '789'
             ]
         }
     },
@@ -40,13 +34,52 @@ module.exports = {
             mods : { theme : 'solarized-light', mode : 'javascript' },
             content : 'move(1, 0);\nopen(1, 0, 123);'
         },
-        right : {
-            block : 'puzzle',
-            parts : [
-                { val : 1,  html : 'a', css : { background : 'red' } },
-                { val : 2,  html : 'b', css : { background : 'green' } },
-                { val : 3,  html : 'c', css : { background : 'blue' } }
-            ]
-        }
+        right : [
+            {
+                block : 'puzzle',
+                mods : { visible : true },
+                js : { secret : 'fU7rq3zjPyxdbYxiQMyP5l6hTNc=' },
+                hint : '🌹 === 1',
+                parts : [
+                    { html : '🌹' },
+                ]
+            },
+            {
+                block : 'puzzle',
+                js : { secret : 'SSM2ZwHyFzaf6DIPAlz9gHKQD18=' },
+                hint : 'match them all',
+                parts : [
+                    { css : { 'background-position' : '100% 0', 'background-image': "url('/common.blocks/puzzle/g.jpg')" } },
+                    { css : { 'background-position' : '0 0', 'background-image': "url('/common.blocks/puzzle/w.jpg')" } },
+                    { css : { 'background-position' : '100% 0', 'background-image': "url('/common.blocks/puzzle/e.jpg')" } },
+                    { css : { 'background-position' : '0 0', 'background-image': "url('/common.blocks/puzzle/g.jpg')" } },
+                    { css : { 'background-position' : '0 0', 'background-image': "url('/common.blocks/puzzle/e.jpg')" } },
+                    { css : { 'background-position' : '100% 0', 'background-image': "url('/common.blocks/puzzle/w.jpg')" } },
+                ]
+            },
+            {
+                block : 'puzzle',
+                js : { secret : 'bsaK1JewL8AWY2TdS7gATVCDXPY=' },
+                hint : 'http://j.mp/to-&lt;prev-key&gt;',
+                parts : [
+                    { html : 'a ' },
+                    { html : 'b ' },
+                    { html : 'i ' },
+                    { html : 'm ' },
+                    { html : 't ' },
+                    { html : 'y ' }
+                ]
+            },
+            {
+                block : 'puzzle',
+                js : { secret : 'nTC0lROlq1H7jcthZ7xBEbadqf4=' },
+                hint : 'http://j.mp/to-&lt;prev-key&gt;',
+                parts : [
+                    { css : { 'background-color' : 'green' } },
+                    { css : { 'background-color' : 'white' } },
+                    { css : { 'background-color' : 'red' } }
+                ]
+            }
+        ]
     }
 };
