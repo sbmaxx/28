@@ -1,5 +1,6 @@
 libs
 !libs/ace-min-noconflict/src-min-noconflict/worker-javascript.js
+!libs/bem-components/design/common.blocks/theme/_islands/clear_size_s.svg
 node_modules/
 .DS_Store
 .idea
