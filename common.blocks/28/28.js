@@ -25,25 +25,33 @@ provide(BEMDOM.decl(this.name, {
                     localStorage['28.code'] = editor.getValue();
                 });
 
+                var step = 0;
                 function move(dx, dy) {
+                    step ++;
                     if(dx >= -1 && dx <= 1 && dy >= -1 && dy <= 1) {
                         var x = girlX + dx,
                             y = girlY + dy;
-                        if(x < 0 || x > 19 || y < 0 || y > 9) return false;
+                        if(x < 0 || x > 19 || y < 0 || y > 9) {
+                            console.log('cant do step %s', step);
+                            return false;
+                        }
                         if(walkways[y][x]) {
                             scene.move(girl, x, y);
                             girlX = x;
                             girlY = y;
                             return true;
                         } else {
+                            console.log('cant do step %s', step);
                             return false;
                         }
                     } else {
+                        console.log('cant do step %s', step);
                         return false;
                     }
                 }
 
                 function open(dx, dy, key) {
+                    step ++;
                     if(dx >= -1 && dx <= 1 && dy >= -1 && dy <= 1) {
                         var x = girlX + dx,
                             y = girlY + dy;

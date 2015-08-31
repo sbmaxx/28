@@ -12,6 +12,7 @@ provide(BEMDOM.decl(this.name, {
                     secret = puzzle.params.secret,
                     preview = this.elem('preview'),
                     value = this.findBlockInside('input').on('change', function() {
+                        console.log('try %s=%s', value.getVal(), SHA1.b64(value.getVal()) === secret);
                         puzzle.setMod('solved', SHA1.b64(value.getVal()) === secret);
                     });
 

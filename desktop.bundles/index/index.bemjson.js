@@ -29,7 +29,7 @@ module.exports = {
     content : {
         block : 'layout',
         topLeft : { block : 'scene' },
-        bottomLeft : {
+        topRight : {
             block : 'ace',
             mods : { theme : 'solarized-light', mode : 'javascript' },
             content : [
@@ -38,7 +38,7 @@ module.exports = {
                 'open(1, 0, \'key from puzzle at right side\');'
             ].join('\n')
         },
-        topRight : {
+        bottomLeft : {
             block : 'solver'
         },
         bottomRight : [
@@ -69,6 +69,40 @@ module.exports = {
                 js : { secret : 'bsaK1JewL8AWY2TdS7gATVCDXPY=' },
                 hint : 'http://j.mp/to&lt;prev-key&gt;',
                 parts : [
+                    // I Belong To You
+                    // I B T Y
+                    // 3256
+                    // i a m b t y
+                    // 3 1 4 2 5 6
+                    // imbty
+                    // i b t y
+                    // 3 2 5 6 1 4
+                    // 1 6
+                    // I belong to you
+                    // 3 2 5 6 1 6
+                    // I belong to you
+                    // 3 2      5  6 1 6
+                    // i'm belong to you
+                    // 3 4 2      5  6
+                    // i am belong to you 1 y
+                    // 3 14 2      5  6
+                    // i m a belong to you
+                    // 3 4 1 2      5  6
+                    //
+                    // 34256
+                    // 314256
+                    // 341256
+                    // 14 3256
+                    //
+
+                    //I belong to you
+                    //3 4 2      5  6
+                    //And you
+                    //1   6
+                    //You belong to me too
+                    //6   2      6  4  5
+                    //
+                    // And you
                     { html : 'a ' },
                     { html : 'b ' },
                     { html : 'i ' },
