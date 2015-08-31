@@ -1,3 +1,3 @@
 ({
-    shouldDeps : 'lock'
+    shouldDeps : ['lock', 'solver']
 })

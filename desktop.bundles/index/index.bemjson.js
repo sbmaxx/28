@@ -28,8 +28,8 @@ module.exports = {
     mods : { theme : 'islands' },
     content : {
         block : 'layout',
-        top : { block : 'scene' },
-        left : {
+        topLeft : { block : 'scene' },
+        bottomLeft : {
             block : 'ace',
             mods : { theme : 'solarized-light', mode : 'javascript' },
             content : [
@@ -38,14 +38,17 @@ module.exports = {
                 'open(1, 0, \'key from puzzle at right side\');'
             ].join('\n')
         },
-        right : [
+        topRight : {
+            block : 'solver'
+        },
+        bottomRight : [
             {
                 block : 'puzzle',
                 mods : { visible : true },
                 js : { secret : 'fU7rq3zjPyxdbYxiQMyP5l6hTNc=' },
                 hint : '🌹 === 1',
                 parts : [
-                    { html : '🌹' },
+                    { html : '🌹' }
                 ]
             },
             {

@@ -7,8 +7,15 @@ block('layout').content()(function() {
         {
             elem : 'row',
             content : [
-                { elem : 'col', content : this.ctx.left },
-                { elem : 'col', content : this.ctx.right }
+                { elem : 'col', content : this.ctx.topLeft },
+                { elem : 'col', content : this.ctx.topRight }
+            ]
+        },
+        {
+            elem : 'row',
+            content : [
+                { elem : 'col', content : this.ctx.bottomLeft },
+                { elem : 'col', content : this.ctx.bottomRight }
             ]
         }
     ]
