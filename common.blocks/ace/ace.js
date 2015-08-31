@@ -4,7 +4,7 @@ modules.define( 'ace', ['i-bem__dom'], function(provide, BEMDOM) {
 /* borschik:include:../../libs/ace-min-noconflict/src-noconflict/ace.js */
 /* borschik:include:../../libs/ace-min-noconflict/src-noconflict/mode-javascript.js */
 /* borschik:include:../../libs/ace-min-noconflict/src-noconflict/theme-solarized_light.js */
-ace.config.set('workerPath', '/libs/ace-min-noconflict/src-noconflict/');
+ace.config.set('workerPath', '../../libs/ace-min-noconflict/src-min-noconflict/');
 
 provide(BEMDOM.decl(this.name, {
     onSetMod : {
