@@ -26,7 +26,6 @@ provide(BEMDOM.decl(this.name, {
                 });
 
                 function move(dx, dy) {
-                    console.log('?? move', arguments);
                     if(dx >= -1 && dx <= 1 && dy >= -1 && dy <= 1) {
                         var x = girlX + dx,
                             y = girlY + dy;
@@ -45,7 +44,6 @@ provide(BEMDOM.decl(this.name, {
                 }
 
                 function open(dx, dy, key) {
-                    console.log('!! open', arguments);
                     if(dx >= -1 && dx <= 1 && dy >= -1 && dy <= 1) {
                         var x = girlX + dx,
                             y = girlY + dy;

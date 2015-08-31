@@ -53,12 +53,12 @@ module.exports = {
                 js : { secret : 'SSM2ZwHyFzaf6DIPAlz9gHKQD18=' },
                 hint : 'match them all',
                 parts : [
-                    { css : { 'background-position' : '100% 0', 'background-image': "url('/common.blocks/puzzle/g.jpg')" } },
-                    { css : { 'background-position' : '0 0', 'background-image': "url('/common.blocks/puzzle/w.jpg')" } },
-                    { css : { 'background-position' : '100% 0', 'background-image': "url('/common.blocks/puzzle/e.jpg')" } },
-                    { css : { 'background-position' : '0 0', 'background-image': "url('/common.blocks/puzzle/g.jpg')" } },
-                    { css : { 'background-position' : '0 0', 'background-image': "url('/common.blocks/puzzle/e.jpg')" } },
-                    { css : { 'background-position' : '100% 0', 'background-image': "url('/common.blocks/puzzle/w.jpg')" } },
+                    { css : { 'background-position' : '100% 0', 'background-image': "url('../../common.blocks/puzzle/g.jpg')" } },
+                    { css : { 'background-position' : '0 0', 'background-image': "url('../../common.blocks/puzzle/w.jpg')" } },
+                    { css : { 'background-position' : '100% 0', 'background-image': "url('../../common.blocks/puzzle/e.jpg')" } },
+                    { css : { 'background-position' : '0 0', 'background-image': "url('../../common.blocks/puzzle/g.jpg')" } },
+                    { css : { 'background-position' : '0 0', 'background-image': "url('../../common.blocks/puzzle/e.jpg')" } },
+                    { css : { 'background-position' : '100% 0', 'background-image': "url('../../common.blocks/puzzle/w.jpg')" } },
                 ]
             },
             {
