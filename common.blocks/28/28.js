@@ -86,6 +86,7 @@ provide(BEMDOM.decl(this.name, {
                             girl = obj;
                             girlX = i;
                             girlY = j;
+                            walkwaysRow[i] = true;
                         } else if(o === 'D') {
                             var puzzle = puzzles.shift();
                             doorsRow[i] = puzzle.lock(
