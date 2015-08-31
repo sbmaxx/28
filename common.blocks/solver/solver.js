@@ -13,8 +13,8 @@ modules.define('solver', ['i-bem__dom'], function(provide, BEMDOM) {
     const SECRETS = [
         '11111111111',
         '415326',
-        '2', // https://yadi.sk/d/JacSB5UGikhh9 "I belong to you"
-        '3'
+        '32561662545', // https://yadi.sk/d/JacSB5UGikhh9 "I belong to you"
+        '23121321312313212131232132'
     ];
 
     provide(BEMDOM.decl(this.name, {
