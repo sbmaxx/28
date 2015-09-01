@@ -13,19 +13,19 @@ modules.define('solver', ['i-bem__dom'], function(provide, BEMDOM) {
     const SECRETS = [
         '11111111111',
         '415326',
-        '32561662545', // https://yadi.sk/d/JacSB5UGikhh9 "I belong to you"
+        '32561662545',
         '23121321312313212131232132'
     ];
+
+    const DEBUG = false;
 
     provide(BEMDOM.decl(this.name, {
         onSetMod : {
             'js' : {
                 'inited' : function() {
 
-                    var page = this.findBlockOutside('page');
-                    var level = page.findBlockInside('28').params.scene;
-                    var editor = BEMDOM.blocks.ace.getInstance();
-                    var scene = page.findBlockInside('scene');
+                    var b28 = this.findBlockOutside('28');
+                    var level = b28.params.scene;
 
                     var current,
                         finish;
@@ -44,12 +44,6 @@ modules.define('solver', ['i-bem__dom'], function(provide, BEMDOM) {
                         }
                     });
 
-                    level.forEach(function(row) {
-                        console.log(row);
-                    });
-
-                    console.log(current);
-
                     var priority = [RIGHT, DOWN, UP, LEFT];
 
                     var step,
@@ -64,11 +58,12 @@ modules.define('solver', ['i-bem__dom'], function(provide, BEMDOM) {
 
                     while(current[0] !== finish[0] || current[1] !== finish[1]) {
 
-                        //console.log('while %s, result %s', iteration, current[0] !== finish[0] && current[1] !== finish[1]);
+                        debug('while %s, result %s', iteration, current[0] !== finish[0] && current[1] !== finish[1]);
 
                         for (var i = 0; i < priority.length; i++) {
 
                             step = priority[i];
+                            iteration++;
 
                             x = current[0] + step[0];
                             y = current[1] + step[1];
@@ -76,16 +71,16 @@ modules.define('solver', ['i-bem__dom'], function(provide, BEMDOM) {
                             try {
                                 point  = level[y][x];
                             } catch(e) {
-                                console.log('out of bounds x=%s, y=%s', x, y);
+                                debug('out of bounds x=%s, y=%s', x, y);
                                 continue;
                             }
 
-                            //console.log('trying.. x=%s, y=%s', x, y);
-                            //console.log('current.x = %s, current.y = %s', current[0], current[1]);
-                            //console.log('step.x = %s, step.y = %s', step[0], step[1]);
+                            debug('trying.. x=%s, y=%s', x, y);
+                            debug('current.x = %s, current.y = %s', current[0], current[1]);
+                            debug('step.x = %s, step.y = %s', step[0], step[1]);
 
                             if (visited.indexOf('' + x + y) !== -1) {
-                                //console.log('already visited x=%s, y=%s', x, y);
+                                debug('already visited x=%s, y=%s', x, y);
                                 continue;
                             }
 
@@ -105,36 +100,37 @@ modules.define('solver', ['i-bem__dom'], function(provide, BEMDOM) {
                                 break;
                             }
 
-                            iteration++;
-
-                        }
-
-                        if (iteration > 3000) {
-                            console.log('num of iterations?');
-                            break;
                         }
 
                     }
 
-                    console.log('finished! %s', iteration);
+                    console.log('Solved in %s iterations', iteration);
 
-                    editor.setValue(solution.join('\n'));
+                    BEMDOM.blocks.ace.getInstance().setValue(solution.join('\n'));
 
-                    function move(step) {
-                        return 'move(' + step[0] + ', ' + step[1] +  ');';
-                    }
-
-                    function open(step, secret) {
-                        return 'open(' + step[0] + ', ' + step[1] +  ', "' + secret + '");';
-                    }
-
-                    this.findBlockInside('button').on('click', function() {
-                        console.log('solve');
-                    }, this);
+                    b28.findBlockInside('scene').domElem.trigger('click');
 
                 }
             }
         }
+    }, {
+        live: function() {
+            this.liveInitOnBlockInsideEvent('click', 'button');
+        }
     }));
+
+    function move(step) {
+        return 'move(' + step[0] + ', ' + step[1] +  ');';
+    }
+
+    function open(step, secret) {
+        return 'open(' + step[0] + ', ' + step[1] +  ', "' + secret + '");';
+    }
+
+    function debug() {
+        if (DEBUG) {
+            console.log.apply(console, arguments);
+        }
+    }
 
 });
